@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html ng-app ="CDSLabsApp">
+<head>
+  <title>UI Router Example</title>
+  <meta charset="utf-8">
+  
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <!-- <script src="//code.jquery.com/jquery-3.2.1.min.js"></script> -->
+       
+    <!-- <script src="//code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="//code.angularjs.org/1.4.3/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.4.3/angular-cookies.js"></script>
+    <script src="//code.angularjs.org/1.4.3/angular-messages.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script> -->
+    
+    <script src="lib/angular1.4.3/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script> -->
+    
+    <script src="lib/angular1.4.3/angular.js" type="text/javascript"></script>
+    <script src="lib/angular1.4.3/angular-route.js" type="text/javascript"></script>
+    <script src="lib/angular1.4.3/angular-cookies.js" type="text/javascript"></script>
+    <script src="lib/angular1.4.3/angular-messages.js" type="text/javascript"></script>
+    <!-- <script src="lib/angular1.4.3/dirPagination.js" type="text/javascript"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <!-- <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js" type="text/javascript"></script> -->
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js" type="text/javascript"></script>
+    
+    <!-- <link rel="stylesheet" href="assets/css/globatsettings.css"> -->
+  	<link rel="stylesheet" href="assets/css/style.css">
+  	<!-- <link rel="stylesheet" href="assets/css/tablegrid.css"> -->
+  	<!-- <link rel="stylesheet" href="assets/css/login.css"> -->
+  	<link rel="stylesheet" href="assets/css/responsetable.css">
+  <!-- 	<link rel="stylesheet" href="assets/css/searchform.css">
+  	<link rel="stylesheet" href="assets/css/form.css"> -->
+  	
+  	<script src="app.js" type="text/javascript"></script>
+  	<script src="services/SessionDetails.js" type="text/javascript"></script>
+  	<script src="services/StudiesService.js" type="text/javascript"></script>
+  	<script src="services/AdminService.js" type="text/javascript"></script>
+  	<script src="directives/Export_To_CSV.js" type="text/javascript"></script>
+  	<!--  <script src="assets/js/services/loginDetails.js" type="text/javascript"></script>
+    -->
+    <script src="modules/LoginLogout.js" type="text/javascript"></script>
+    <script src="modules/Home_Location.js" type="text/javascript"></script>
+    <script src="modules/Locations.js" type="text/javascript"></script>
+    <script src="modules/Dashboard.js" type="text/javascript"></script> 
+    <script src="modules/Home.js" type="text/javascript"></script>
+  	<script src="modules/Activities.js" type="text/javascript"></script>
+  	<script src="modules/Users.js" type="text/javascript"></script>
+  	<!-- <script src="modules/Studies.js" type="text/javascript"></script> -->
+    <!-- <script src="assets/modules/signup/signup.js" type="text/javascript"></script> -->
+    <script src="lib/accordian.js" type="text/javascript"></script>
+    
+    
+    
+</head>
+
+<body ng-cloak>
+
+<!-- Start of the Logo -->
+<!-- 	<div class="page-header  no-margin  no-padding" >
+		<div class="container">
+			<div class="cds-logo" >
+				<img src="assets/img/logos/campus_logo.jpg" class="img-responsive" alt="logo"/>
+				<div ui-view="logo"></div>
+			</div>
+			<img src="assets/img/logos/campus_logo.jpg" alt="logo"/>
+		</div>
+    </div> -->
+    
+    <div ui-view="logo"></div>
+<!-- End of the Logo -->
+	
+    
+<!-- Start of the Navigation Bar -->    
+	<nav class="navbar  navbar-inverse" role="navigation" style="margin-bottom:6px">
+	  
+	  <div class="container-fluid">
+		   
+		   <div class="navbar-header">
+		      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>                        
+		      	</button>
+		      	<a class="navbar-brand" href="#">CDR Labs</a>
+	    	</div>
+	    
+	    	<div class="collapse navbar-collapse" id="myNavbar">
+	    
+			    <ul class="nav navbar-nav" >
+			      <li ><a href="#/defaultHome"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+			     	<!--  <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li> -->
+			      
+			      <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Locations<span class="caret"></span></a>
+			        <ul class="dropdown-menu" ng-controller="LocationContrl">
+			          <li><a href="#" ng-click="$event.preventDefault();displayLocation('Campus Lab')">Campus Lab</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#">Downtown Lab</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#">Museun of Science and Industry</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#">Chicago Park District</a></li>
+			        </ul>
+			      </li>
+			      
+			      <li ng-show="userAccess"><a href="#/dashboard">Studies Dashboard</a></li>
+			      <li ng-show="userAccess"><a href="#/newstudy">New Study</a></li>
+			      
+			      <!--  <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" ng-show="userAccess"  href="#">MyStudies<span class="caret"></span></a>
+			        <ul class="dropdown-menu" >
+			          <li><a href="#" ng-click="$event.preventDefault();MyStudies('OnGoing')">OnGoing</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#" ng-click="$event.preventDefault();MyStudies('Queue')">Queue</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#" ng-click="$event.preventDefault();MyStudies('Completed')">Completed</a></li>
+			          <li class="divider"></li>
+			        </ul>
+			      </li> -->
+			      
+			      <li ng-show="userAccess"><a href="#">Personal</a></li>
+			      
+			       <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" ng-show="adminAccess"  href="#"> Administration<span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="#/users">Users</a></li>
+			          <li><a href="#/activities">Activities</a></li>
+			          <li><a href="#/locations">Locations</a></li>
+			        </ul>
+			      </li>
+			      
+			      
+			    </ul>
+	    
+			    <ul class="nav navbar-nav navbar-right">
+			      <li ng-show ="logoutFlag"><a href="">Logged in as <b>{{fullName}}</b></a></li>
+			      <li ng-show ="!signUpFlag"><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			      <li ng-show ="!loginFlag"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			      <li ng-show ="logoutFlag" ng-controller="LoginLogoutController"><a href="#" ng-click="$event.preventDefault();logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+			    </ul>
+	    
+	    	</div>
+	  </div>
+
+</nav>
+
+<!-- End of the Navigation Bar --> 
+
+
+<div ng-cloak ui-view="top"></div>
+
+
+<!-- Start of the Footer -->
+
+<!-- <div class="navbar navbar-fixed-bottom row-fluid">
+	
+	<footer class="site-footer">
+
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-5">
+					<h4>Contact Address</h4>
+					<address>
+						#333, 4th Street, <br>
+						Daniel street, <br>
+						Country.
+					</address>
+				
+				</div>
+			</div>
+			
+			<div class="bottom-footer">
+				
+					<div class="col-md-5">@ Copyright CDR Labs 2017.</div>
+					<div class="col-md-7">
+						 <ul class="footer-nav">
+				      		<li><a href="#">Home</a></li>
+				      		<li><a href="#login"> Contacts</a></li>
+				      		<li><a href="#logout"> Blogs</a></li>
+				    	</ul>
+					</div>
+			</div>
+		</div>
+	</footer>
+</div> -->
+
+<!-- End of the Footer -->
+
+
+</body>
+</html>

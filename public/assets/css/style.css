@@ -1,0 +1,114 @@
+.no-margin
+{
+	margin:0px;
+}
+
+.no-padding
+{
+	padding:0px;
+}
+
+.padding-top
+{
+	padding-top:15px;
+}
+
+.margin-top
+{
+	margin-top:15px;
+}
+
+
+.bordercolumn {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 50px;
+  border: 0;
+  border-left: 1px solid #cccccc;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+
+.border-right {
+    border-right: 1px solid #ddd;
+}
+
+.borders {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    margin: -1px;
+}
+
+.border-left {
+    border-left: 1px solid #ddd;
+}
+
+
+
+.site-footer
+{
+	
+/* 	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px; */
+	background-color:#222;
+	color:#fff;
+	margin-top: 0px;
+	padding-top:0px;
+	
+}
+
+.bottom-footer
+{
+	border-top:1px solid #b2b2b2;
+	margin-top: 10px;
+	padding-top:10px;
+	color:#b2b2b2;
+}
+
+.footer-nav
+{
+	text-align:right;
+	list-style:none;
+	
+}
+
+
+.footer-nav li
+{
+	display:inline;
+}
+
+.footer-nav li:not(:first-child):before
+{
+	content: '|';
+	padding:0px 10px;
+}
+
+.footer-nav a
+{
+	color:#b2b2b2;
+		
+}
+
+.footer-nav a:hover
+{
+	color:#fff;
+	text-decoration:none
+		
+}
+.main{
+	padding-bottom:82px;
+}
+@media only screen and (max-width: 767px) {
+	.main{
+		padding-bottom:109px;
+	}
+}
+.cds-logo{
+	width:15%;
+	margin:0 auto;
+}
+

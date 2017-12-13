@@ -1,0 +1,35 @@
+<div ng-app="LocationsModule">
+
+	
+			
+	 		<a class="btn btn-primary" href="#/newlocation">Add Location <span class="glyphicon glyphicon-user"/></a>	
+	 		<a class="btn btn-primary" href="#/uploadlocationimage">Upload Location Image <span class="glyphicon glyphicon-user"/></a>
+			<table class="responstable">
+	        	<tbody>
+		        	<tr >
+		        		<th>Sno </th>
+		            	<th ng-click='userSortColumn("username")' ng-class='userSortClass("username")'>Location SName </th>
+		            	<th ng-click='userSortColumn("firstname")' ng-class='userSortClass("firstname")'>Location </th>
+		            	<th ng-click='userSortColumn("lastname")' ng-class='userSortClass("lastname")'>Location Image Path </th>
+		            	<th>Location Images </th>
+		            	<th style= "text-align:center">View/Delete Images </th>
+		            	<th style= "text-align:center">Update </th>
+		            	<th style= "text-align:center">Delete </th>
+		        	</tr>
+				
+		        	<tr ng-repeat="location in locations | orderBy: userSortCol : userReverse | startLocationFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+		            	<td style= "text-align:center">{{$index+1}}</td>
+		            	<td>{{location.locationshortname}}</td>
+		            	<td>{{location.locationname}}</td>
+		            	<td>{{location.locationimagepath}}</td>
+		            	<td>{{location.locationimages}}</td>
+		            	<td style= "text-align:center"><a href="#/viewdeletelocationimages/{{location.locationshortname}}" class="btn btn-link btn-xs">View / Delete Images <span class="glyphicon glyphicon-user"/></a></td>
+		            	<td style= "text-align:center"><a href="#/updatelocation/{{location.locationshortname}}" class="btn btn-link btn-xs">Update <span class="glyphicon glyphicon-user"/></a></td>
+		            	<td style= "text-align:center"><a class="btn btn-link btn-xs" ng-click='deleteLocation(location.locationshortname)'>Delete <span class="glyphicon glyphicon-user"/></a></td>
+		        	</tr>
+		        </tbody>
+	        </table>
+	        
+	        <pagination page="currentPage" max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit"></pagination>
+
+</div>

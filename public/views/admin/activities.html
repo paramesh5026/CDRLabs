@@ -1,0 +1,34 @@
+<div ng-app="Activities">
+
+<div class="panel panel-default "> 
+	
+			<br>
+			 <a href="#/newactivity" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Add Activity</a>
+			 <br>
+			<table class="table table-striped table-condensed table-hover">
+	        	<thead>
+		        	<tr>
+		            	<td>Activity Name</td>
+		            	<td>Activity Description</td>
+		            	<td>Activity Submission Date</td>
+		            	<td>Update</td>
+		            	<td>Delete</td>
+		        	</tr>
+	        	</thead>
+	        	
+				<tbody>
+		        	<!-- <tr ng-repeat="study in studies | filter: searchStudyName"> -->
+		        	<tr ng-repeat="activity in activities | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+		            	<td>{{activity.activityName}}</td>
+		            	<td>{{activity.activityDescription}}</td>
+		            	<td>{{activity.date}}</td>
+		            	<td><a>Update</a></td>
+		            	<td><a>Delete</a></td>
+		        	</tr>
+	        	</tbody>
+	        </table>
+	        
+	        <pagination page="currentPage" max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit"></pagination>
+	        
+	</div>
+</div>

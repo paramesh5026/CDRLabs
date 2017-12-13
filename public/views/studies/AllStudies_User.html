@@ -1,0 +1,88 @@
+<div ng-app="Dashboard">
+
+	 <div class="container">
+		<form class="form-horizontal" name="loginForm">
+		  <fieldset>
+		    <legend> Search Studies</legend>
+		    
+		    <div class="form-group">
+			    
+		      <label for="inputUserName" class="col-lg-2 control-label">Study Name</label>
+		      <div class="col-lg-4">
+		        <input id="userName"type="text" class="form-control" placeholder="Enter Study Name"    
+		        ng-model="searchStudyName"/>
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label for="inputPassword" class="col-lg-2 control-label"> Study Status</label>
+		      <div class="col-lg-4">
+		         <select id="studyStatus" name="studyStatus" class="form-control" 
+						ng-options="status for status in allstatus" 
+						placeholder="Select Study Status"   ng-model="searchStudyStatus"/>
+		        
+		      </div>
+		    </div>
+		 
+		    <div class="form-group">
+		      <div class="col-lg-10 col-lg-offset-2">
+		        <button type="submit" class="btn btn-primary"  ng-click="searchStudies()">Search</button>
+		        <button type="submit" class="btn btn-primary" ng-click="reset()">Reset</button>
+		      </div>
+		    </div>
+		    
+		    
+		    
+		  </fieldset>
+		</form>
+	</div>
+			
+		 <div class="form-group">
+		      <div class="col-lg-10 col-lg-offset-2">
+		        <button class="btn btn-primary"  ng-click="exportToExcel('#studiestable')">Export<span class="glyphicon glyphicon-export"></span></button>
+		      </div>
+		    </div>
+		    	
+			<table id="studiestable" class="responstable">
+	        	<tbody>
+		        	<tr >
+		        		<th>Sno </th>
+		            	<th ng-click='sortColumn("studyName")' ng-class='sortClass("studyName")'>Study Name </th>
+		            	<th ng-click='sortColumn("studyDesc")' ng-class='sortClass("studyDesc")'>Study Description </th>
+		            	<th ng-click='sortColumn("studyOwnedBy")' ng-class='sortClass("studyOwnedBy")'>Study OwnedBy </th>
+		            	<th ng-click='sortColumn("status")' ng-class='sortClass("status")'>Study Status </th>
+		            	<th ng-click='sortColumn("location")' ng-class='sortClass("location")'>Study Location </th>
+		            	<th ng-click='sortColumn("participants")' ng-class='sortClass("participants")'>No of Participants </th>
+		            	<th style= "text-align:center"><div>
+		            		<span>Date Began</span>
+		            		<hr style= "margin:0 0">
+		            		<span>Days Running</span>
+		            	</div>
+		            	</th>
+		            	<th style= "text-align:center">PA-Cost to Date </th>
+		            	<th style= "text-align:center">RA-Cost to Date </th>
+		            	<th style= "text-align:center">Study Details </th>
+		            	<th style= "text-align:center">Update </th>
+		            	<th style= "text-align:center">Delete </th>
+		        	</tr>
+				
+		        	<tr ng-repeat="researchStudy in studies | orderBy: sortCol : reverse | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+		            	<td style= "text-align:center">{{$index+1}}</td>
+		            	<td>{{researchStudy.studyname}}</td>
+		            	<td>{{researchStudy.studydesc}}</td>
+		            	<td>{{researchStudy.studysubmittedby}}</td>
+		            	<td>{{researchStudy.status}}</td>
+		            	<td>{{researchStudy.location}}</td>
+		            	<td style= "text-align:center">{{researchStudy.participants}}</td>
+		            	<td>{{researchStudy.daysCompleted}}</td>
+		            	<td style= "text-align:center"></td>
+		            	<td style= "text-align:center"></td>
+		            	<td style= "text-align:center"><a>Details</a></td>
+		            	<td style= "text-align:center"><a>Update</a></td>
+		            	<td style= "text-align:center"><a>Delete</a></td>
+		        	</tr>
+		        </tbody>
+	        </table>
+	        
+	        <pagination page="currentPage" max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit"></pagination>
+
+</div>

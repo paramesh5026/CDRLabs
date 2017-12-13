@@ -1,0 +1,91 @@
+{
+	"studies": [
+	
+		{
+			"study_id": "boot",
+			"study_Name": "Boot Start",
+			"study_Descripton": "Boot Strap for html documentation creation",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "bngular",
+			"study_Name": "Angular Basci123",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "bngular",
+			"study_Name": "bngular Basci123",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "ch",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"ganesh"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		},
+		{
+			"study_id": "angular",
+			"study_Name": "Angular Basci",
+			"study_Descripton": "Angular Basic development",
+			"study_owned_by":"chiru"
+		}
+		
+	]
+}

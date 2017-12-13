@@ -1,0 +1,67 @@
+ <div class="container">
+	
+	<div class="row centered-form">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+	
+		<div class="panel panel-default "> 
+	
+			<div class="panel-heading" data-toggle="collapse" aria-expanded="false" 
+			data-target="#activityform" aria-controls="activityform">
+			Add New Activity
+				<!-- <button  type="button" data-toggle="collapse" aria-expanded="false" data-target="#activityform" 
+				aria-controls="activityform"> New Study Registration</button> -->
+			</div>
+		
+			<div class="panel-body margin-top" id="activityform">
+			
+				<form class="form" role="form" name="activityform">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								 <label for="activityNameLabel" class="control-label">*Activity Name</label>
+								 <input id="activityName" name="activityName" type="text" class="form-control" 
+								 placeholder="Enter Study Name"    ng-model="activity.activityName" required="required" 
+								 ng-minlength="20" ng-maxlength="50"/>
+								 <div ng-messages="activityform.activityName.$dirty && activityform.activityName.$error" style="color:red">
+	        						<div ng-message='required'> Activity name is required.. </div>
+	        						<div ng-message='minlength'> Please enter activity name atleast 20 characters.</div>
+	        						<div ng-message='maxlength'> Activity name can't be 50 char length. </div>
+	       						 </div>
+							</div>	 
+						</div>
+						
+					</div>	
+					
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								 <label for="activityDescLabel" class="control-label">*Activity Description</label>
+								 <textarea id="activityDesc" name="activityDesc" class="form-control" 
+								 placeholder="Enter Actvity Description"    ng-model="activity.activityDesc" required="required" 
+								 ng-minlength="50" ng-maxlength="500"/>
+								 <div ng-messages="activityform.activityDesc.$dirty && activityform.activityDesc.$error" style="color:red">
+	        						<div ng-message='required'> Activity description is required. </div>
+	        						<div ng-message='minlength'> Please enter activity description atleast 50 characters.</div>
+	        						<div ng-message='maxlength'> Activity description can't be 500 char length. </div>
+	       						 </div>
+							</div>	 
+						</div>
+						
+					</div>
+					
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+							<div class="form-group">
+								 <button type="submit" class="btn btn-primary"  ng-click="submitNewActivity()">Submit</button>
+		        				 <button type="reset" class="btn btn-primary"  ng-click="restNewActivityForm()">Reset</button>
+		        				 <button type="cancel" class="btn btn-primary"  ng-click="cancelNewActivityForm()">Cancel</button>
+							</div>	 
+						</div>
+							
+					</div>	
+				</form>	
+		</div>
+	</div>
+	</div>
+	</div>
+</div>

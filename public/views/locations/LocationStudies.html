@@ -1,0 +1,38 @@
+<div>
+
+<div class="panel panel-default "> 
+	
+			<div class="panel-heading" data-toggle="collapse" aria-expanded="false" 
+				data-target="#studyform" aria-controls="studyform">
+				Studies at Specified Locations
+			</div>
+			
+			<div class="panel-body panel-body-margintop">
+				
+				
+				<table class="table table-striped table-condensed table-hover">
+		        	<thead>
+			        	<tr>
+			            	<td>Study ID</td>
+			            	<td>Study Name</td>
+			            	<td>Study Desc</td>
+			            	<td>Study OwnedBy</td>
+			        	</tr>
+		        	</thead>
+		        	
+					<tbody>
+			        	<!-- <tr ng-repeat="study in studies | filter: searchStudyName"> -->
+			        	<tr ng-repeat="study in filtered = studies | filter:study | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+			            	<td>{{study.study_id}}</td>
+			            	<td>{{study.study_Name}}</td>
+			            	<td>{{study.study_Descripton}}</td>
+			            	<td>{{study.study_owned_by}}</td>
+			        	</tr>
+		        	</tbody>
+		        </table>
+		        
+		        <pagination page="currentPage" max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit"></pagination>
+	       </div>	
+	        
+	</div>
+</div>

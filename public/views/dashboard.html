@@ -1,0 +1,64 @@
+<div class="row">
+	
+		<div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:20px;">
+			 <div class="panel-group" id="accordion">
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+			            Studies
+			            </div>
+			               <div class="panel-body panel-body-submenu">
+			                    <ul>
+									<li> <a href="#/home/msg1">My Studies</a></li>
+									<li> <a href="#/home/newstudy">New Study</a></li>
+									<li> <a href="#/home/participant">Queue()</a></li>
+									<li> <a href="#/home/participant">InProgress()</a></li>
+									<li> <a href="#/home/participant">Completed</a></li>
+								</ul>
+			            </div>
+			        </div>
+			        
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+			                    Reports
+			            </div>
+			                <div class="panel-body panel-body-submenu">
+			                    <ul>
+									<li> <a href="#/home/msg1">All Studies</a></li>
+									<li> <a href="#/home/participant">Completed Studies</a></li>
+									<li> <a href="#/home/participant">Location wise Report</a></li>
+								</ul>
+			                </div>
+			        </div>
+			        
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+			                    Personal Details
+			            </div>
+			                <div class="panel-body panel-body-submenu">
+			                    <ul>
+									<li> <a href="#/home/msg1">Personal Details</a></li>
+									<li> <a href="#/home/participant">Change Password</a></li>
+								</ul>
+			            </div>
+			        </div>
+			        
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+			                    Admininstration
+			            </div>
+			                <div class="panel-body panel-body-submenu">
+			                    <ul>
+									<li> <a href="#/home/msg1">Users</a></li>
+								</ul>
+			                </div>
+			        </div>
+        	</div>
+		</div>
+		
+		<div class="col-xs-10 col-sm-10 col-md-10" style="padding-right:20px;">
+			<div ui-view="studydetails"></div>
+		</div>
+		<div class="col-xs-10 col-sm-10 col-md-10" style="padding-right:20px;">
+			<div ui-view="child"></div>
+		</div>
+</div>

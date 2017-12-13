@@ -1,0 +1,37 @@
+<div ng-model="UsersModule"  ng-controller="Users">
+
+			
+			<button type="cancel" class="btn btn-primary" export export-data="users"  export-filename="'PendingUsers'" export-keys="['username','firstname','lastname','email','cnetid','mobile']"> Export <span class="glyphicon glyphicon-backward"></span></button>
+			<button type="cancel" class="btn btn-primary" ng-click="backToUsers()"> Users <span class="glyphicon glyphicon-backward"></span></button>
+			
+			<table class="responstable">
+	        	<tbody>
+		        	<tr >
+		        		<th>Sno </th>
+		            	<th ng-click='userSortColumn("username")' ng-class='userSortClass("username")'>Username </th>
+		            	<th ng-click='userSortColumn("firstname")' ng-class='userSortClass("firstname")'>Firstname </th>
+		            	<th ng-click='userSortColumn("lastname")' ng-class='userSortClass("lastname")'>LastName </th>
+		            	<th >Email </th>
+		            	<th >Mobile </th>
+		            	<th >Role </th>
+		            	<th style= "text-align:center">Update </th>
+		            	<th style= "text-align:center">Delete </th>
+		        	</tr>
+				
+		        	<tr ng-repeat="user in users | orderBy: userSortCol : userReverse | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+		            	<td style= "text-align:center">{{$index+1}}</td>
+		            	<td>{{user.username}}</td>
+		            	<td>{{user.firstname}}</td>
+		            	<td>{{user.lastname}}</td>
+		            	<td>{{user.email}}</td>
+		            	<td>{{user.mobile}}</td>
+						<td>{{user.role}}</td>
+		            	<td style= "text-align:center"><a href="#/updateuser/{{user.username}}" class="btn btn-link btn-xs">Update <span class="glyphicon glyphicon-user"/></a></td>
+		            	<td style= "text-align:center"><a class="btn btn-link btn-xs" ng-click='deleteUser(user.username)'>Delete <span class="glyphicon glyphicon-user"/></a></td>
+		        	</tr>
+		        </tbody>
+	        </table>
+	        
+	        <pagination page="currentPage" max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit"></pagination>
+
+</div>

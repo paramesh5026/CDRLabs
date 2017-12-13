@@ -1,0 +1,15 @@
+1. Design of the image should look as specified : http://bfemuniversity.com/gallery-fullscreen-tour.php
+
+2. Back ground images: https://www.google.co.in/search?q=html+background+image+full+screen&sa=X&tbm=isch&source=iu&pf=m&ictx=1&fir=i6i4Z1yKuEjWDM%253A%252CRHCW5m8bIUqdxM%252C_&usg=__cGp_mkZ7tabzlFt-EfuoKOJfGMY%3D&ved=0ahUKEwiMwvTd08PXAhVLK48KHRCNA68Q9QEIXzAJ#imgrc=9ivhB08RpJv9pM:
+
+
+
+Angular Directive: For error handling
+		https://stackoverflow.com/questions/14348384/reconcile-angular-js-and-bootstrap-form-validation-styling
+
+
+
+ng-disabled="!signupformdata.$valid"
+
+
+

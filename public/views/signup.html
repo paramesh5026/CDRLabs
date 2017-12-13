@@ -1,0 +1,162 @@
+<div class="container" ng-model="UsersModule" ng-controller="SignUpCtrl">
+	
+	<form class="well form-horizontal" role="form"  name="signupform" id="signupform" novalidate >
+		<fieldset>
+			<!-- Form Name -->
+			<legend>User Registration</legend>
+				
+				<!-- div class="form-group">
+					<div class="col-md-4 control-label" style="text-align:left;color:red" ng-show="signup_error">{{signup_error}}</div> 
+				</div> --> 
+				<!-- Last Name -->
+			<!-- 	<div class="form-group">
+				  <label class="col-md-4 control-label"></label>  
+				  <div class="col-md-4 control-label" style="text-align:left;color:red" ng-show="signup_error">{{signup_error}}</div>
+				</div> -->
+				
+				<!-- Username -->
+				<div class="form-group has-feedback"  ng-class="{ 'has-error': signupform.username.$invalid && signupform.username.$touched ,'has-success' : signupform.username.$valid}">
+				  <label class="col-md-4 control-label"><span style="color:red">* </span>User Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon" style="color:red"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="username" placeholder="User Name" class="form-control"  type="text" 
+				  			ng-model="signupformdata.username"
+				  			ng-blur="usernameChanged()"
+				  			ng-minlength="5" 
+           					ng-maxlength="20" 
+           					ng-required="true" />
+				    </div>
+					<div ng-messages="signupform.username.$dirty &&  signupform.username.$error" style="color:red">
+						<div ng-message='required'>Please enter a value for username.</div>
+						<div ng-message='minlength'>Username should be at least 5 characters long.</div>
+						<div ng-message='maxlength'>Username should be at most 20 characters long.</div>
+	  				 </div>	
+				  </div>
+				  
+				</div>
+				
+  				 
+				<!-- First Name -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">First Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="first_name" placeholder="First Name" class="form-control"  type="text" 
+				  		ng-model="signupformdata.firstname"/>
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- Last Name -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Last Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="last_name" placeholder="Last Name" class="form-control"  type="text" 
+				  		ng-model="signupformdata.lastname"/>
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- Password -->
+				<div class="form-group" ng-class="{ 'has-error': signupform.password.$touched && signupform.password.$invalid ,'has-success' : signupform.password.$valid}">
+				  <label class="col-md-4 control-label"><span style="color:red">* </span>Password</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon" style="color:red"><i class="glyphicon glyphicon-lock"></i></span>
+				  		<input  name="password" placeholder="Password" class="form-control"  type="password"
+				  			ng-model="signupformdata.password"
+				  			ng-minlength="6" 
+           					ng-required="true"/>
+				    </div>
+				    <div ng-messages="signupform.password.$dirty &&  signupform.password.$error" style="color:red">
+						<div ng-message='required'>Please enter a value for password.</div>
+						<div ng-message='minlength'>Password should be at least 6 characters long.</div>
+	  				 </div>	
+				  </div>
+				</div>
+				
+				<!-- Confirm Password -->
+				<div class="form-group" ng-class="{ 'has-error': signupform.confirm_password.$touched && signupform.confirm_password.$invalid ,'has-success' : signupform.confirm_password.$valid}">
+				  <label class="col-md-4 control-label"><span style="color:red">* </span>Confirm Password</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon" style="color:red"><i class="glyphicon glyphicon-lock"></i></span>
+				  		<input  name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password"
+				  		ng-model="signupformdata.confirmpassword"
+				  		ng-minlength="6" 
+           				ng-required="true"/>
+				    </div>
+				    <div ng-messages="signupform.confirm_password.$dirty &&  signupform.confirm_password.$error" style="color:red">
+						<div ng-message='required'>Please enter a value for confirm password and should be similar to password field.</div>
+						<div ng-message='minlength'>Confirm password should be at least 6 characters long and similar to password field.</div>
+	  				 </div>
+				  </div>
+				</div>
+				
+				<!-- EMail-->
+			       <div class="form-group" ng-class="{ 'has-error': signupform.email.$touched && signupform.email.$invalid ,'has-success' : signupform.email.$valid}">
+					  <label class="col-md-4 control-label"><span style="color:red">* </span>E-Mail</label>  
+					  <div class="col-md-4 inputGroupContainer">
+						    <div class="input-group">
+						        <span class="input-group-addon" style="color:red"><i class="glyphicon glyphicon-envelope"></i></span>
+						  		<input name="email" placeholder="E-Mail Address" class="form-control"  type="text"
+						  		ng-model="signupformdata.email"
+						  		ng-minlength="10" 
+	           					ng-required="true"/>
+						    </div>
+						    <div ng-messages="signupform.email.$dirty &&  signupform.email.$error" style="color:red">
+								<div ng-message='required'>Please enter a value for email.</div>
+								<div ng-message='minlength'>Email should be at least 10 characters long.</div>
+								<div ng-message='email'>This field must be a valid email address.</div>
+		  					 </div>
+					  </div>
+				</div>
+			
+			
+			<!-- Phone input-->
+			       
+			<div class="form-group">
+				  <label class="col-md-4 control-label">Phone #</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+				  		<input name="phone" placeholder="(xxxx)xxxx-xxxxx" class="form-control" type="text"
+				  		ng-model="signupformdata.phone"/>
+				    </div>
+				  </div>
+			</div>
+			
+			<!-- CNET ID-->
+			       
+			<div class="form-group" ng-class="{ 'has-error': signupform.cnetid.$touched && signupform.cnetid.$invalid ,'has-success' : signupform.cnetid.$valid}">
+				  <label class="col-md-4 control-label"><span style="color:red">* </span>CNet ID</label>  
+				    <div class="col-md-4 inputGroupContainer">
+					    <div class="input-group">
+					        <span class="input-group-addon" style="color:red"><i class="glyphicon glyphicon-earphone"></i></span>
+					  		<input name="cnetid" placeholder="cnet id" class="form-control" type="text"
+					  		ng-model="signupformdata.cnetid"
+					  		ng-required="true"/>
+					    </div>
+					    <div ng-messages="signupform.cnetid.$dirty &&  signupform.cnetid.$error" style="color:red">
+							<div ng-message='required'>Please enter a value for cnet.</div>
+			  			</div>
+				  </div>
+			</div>
+
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label"></label>
+				  <div class="col-md-4">
+				    <button type="submit" class="btn btn-primary" ng-disabled="signupform.$invalid" ng-click="signUpUser(signupformdata)" >Register <span class="glyphicon glyphicon-send"></span></button>
+				    <button type="reset" class="btn btn-primary" ng-click="resetSignupUserDetails()" >Reset <span class="glyphicon glyphicon-refresh"></span></button>
+				    <button type="cancel" class="btn btn-primary" ng-click="cancelSingupForm()" >Cancel <span class="glyphicon glyphicon-backward"></span></button>
+				  </div>
+				</div>
+		</fieldset>
+	</form>
+
+</div>

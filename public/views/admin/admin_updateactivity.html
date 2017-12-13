@@ -1,0 +1,53 @@
+<div class="container">
+	
+	<form class="well form-horizontal" id="update_activity_form" role="form" name="update_activity_form">
+		<fieldset>
+			<!-- Form Name -->
+			<legend>Update Activity</legend>
+				
+				<!-- Username -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Activity Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="activity_name" placeholder="Activity Name" class="form-control"  ng-model="updateActivityFormData.activityname" type="text">
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- First Name -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Activity Description</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="activity_desc" placeholder="Activity Description" class="form-control" ng-model="updateActivityFormData.activitydesc" type="text">
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- Last Name -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Activity Date</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="activity_desc" placeholder="Activity Date" class="form-control"  ng-model="updateActivityFormData.activitydate" type="text">
+				    </div>
+				  </div>
+				</div>
+		
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label"></label>
+				  <div class="col-md-4">
+				    <button type="submit" class="btn btn-primary" ng-click="updateActivity()">Update <span class="glyphicon glyphicon-send"></span></button>
+				    <button type="cancel" class="btn btn-primary" ng-click="cancelUpdateActivityForm()">Cancel <span class="glyphicon glyphicon-backward"></span></button>
+				  </div>
+				</div>
+		</fieldset>
+	</form>
+
+</div>
+

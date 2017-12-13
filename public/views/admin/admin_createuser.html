@@ -1,0 +1,112 @@
+<div class="container">
+	
+	<form class="well form-horizontal" id="contact_form" role="form" name="contact_form">
+		<fieldset>
+			<!-- Form Name -->
+			<legend>Create User</legend>
+				
+				<!-- Username -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">User Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="user_name" placeholder="User Name" class="form-control"  ng-model="userFormData.username" type="text">
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- First Name -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">First Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="first_name" placeholder="First Name" class="form-control" ng-model="userFormData.firstname" type="text">
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- Last Name -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Last Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="first_name" placeholder="Last Name" class="form-control"  ng-model="userFormData.lastname" type="text">
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- Select User Role -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">User Role</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<select  name="user_role" placeholder="Select User Role" class="form-control"  ng-options="userrole for userrole in userroles" ng-model="userFormData.userrole" />
+				    </div>
+				  </div>
+				</div>
+				
+				
+				<!-- Password -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Password</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+				  		<input  name="first_name" placeholder="Password" class="form-control" ng-model="userFormData.password" type="text">
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- Confirm Password -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Confirm Password</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+				  		<input  name="first_name" placeholder="Confirm Password" class="form-control" ng-model="userFormData.repass" type="text">
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- EMail-->
+			       <div class="form-group">
+					  <label class="col-md-4 control-label">E-Mail</label>  
+					    <div class="col-md-4 inputGroupContainer">
+					    <div class="input-group">
+					        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					  		<input name="email" placeholder="E-Mail Address" class="form-control"  ng-model="userFormData.email" type="text">
+					    </div>
+					  </div>
+				</div>
+			
+			
+			<!-- Phone input-->
+			       
+			<div class="form-group">
+				  <label class="col-md-4 control-label">Phone #</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+				  		<input name="phone" placeholder="(845)555-1212" class="form-control" ng-model="userFormData.mobile" type="text">
+				    </div>
+				  </div>
+			</div>
+
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label"></label>
+				  <div class="col-md-4">
+				    <button type="submit" class="btn btn-primary" ng-click="createUser()">Register <span class="glyphicon glyphicon-send"></span></button>
+				    <button type="reset" class="btn btn-primary" ng-click="resetUserDetails()">Reset <span class="glyphicon glyphicon-refresh"></span></button>
+				    <button type="cancel" class="btn btn-primary" ng-click="cancelUserForm()">Cancel <span class="glyphicon glyphicon-backward"></span></button>
+				  </div>
+				</div>
+		</fieldset>
+	</form>
+
+</div>
+

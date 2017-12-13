@@ -1,0 +1,21 @@
+.panel {
+  background-color:#EEF;
+}
+
+.panel-default > .panel-heading {
+  background: #F5F5D5;
+}
+
+.panel-body-submenu{
+	font-size:12px;
+	margin-top:10px;
+}
+
+.panel-body-margintop{
+	margin-top:10px;
+}
+
+/*
+.panel-header{
+	background-color:#F5F5D5
+} */

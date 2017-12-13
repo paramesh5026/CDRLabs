@@ -1,0 +1,41 @@
+ <div class="container">
+	<form class="form-horizontal" name="loginForm">
+	  <fieldset>
+	    <legend> Sign In</legend>
+	    <div ng-show="error" class="alert alert-danger">{{error}}</div>
+	    <div ng-show="isLoading" style="color:red">
+			<span class="glyphicon glyphicon-time"></span> Loading...
+		</div>
+	    <div class="form-group">
+		    
+	      <label for="inputUserName" class="col-lg-2 control-label"><i class="glyphicon glyphicon-user"></i> Username</label>
+	      <div class="col-lg-4">
+	        <input id="userName" name="userName" type="text" class="form-control" placeholder="Enter Username"    
+	        ng-model="userName" required="required"/>
+	        <div ng-messages="loginForm.userName.$dirty && loginForm.userName.$error" style="color:red">
+	        	<div ng-message='required'> user name is required. </div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label for="inputPassword" class="col-lg-2 control-label"><i class="glyphicon glyphicon-lock"></i> Password</label>
+	      <div class="col-lg-4">
+	        <input id="passwd" name="passwd" type="password" class="form-control" placeholder="Enter Password"    ng-model="password" required="required"/>
+	        <div ng-messages="loginForm.passwd.$dirty && loginForm.passwd.$error" style="color:red">
+	        	<div ng-message='required'> password is required. </div>
+	        </div>
+	      </div>
+	    </div>
+	 
+	    <div class="form-group">
+	      <div class="col-lg-10 col-lg-offset-2">
+	        <button type="submit" ng-disabled=!loginForm.$valid class="btn btn-primary"  ng-click="login()">Login</button>
+	        <button type="submit" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+	      </div>
+	    </div>
+	    
+	    
+	    
+	  </fieldset>
+	</form>
+</div>

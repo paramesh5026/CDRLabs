@@ -1,0 +1,77 @@
+ <div class="container" ng-app="Authentication" ng-controller="SignupControl">
+	
+	<div class="row centered-form">
+	<div class="col-md-8 col-sm-8 col-xs-12 col-sm-offset-2 col-md-offset-2">
+	<div class="panel panel-primary "> 
+	
+		<div class="panel-heading"><h3 class="no-padding no-margin">User Registration Form</h3></div>
+		<div class="panel-body margin-top">
+			<form class="form" role="form" id="userRegistrationForm">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+						<div class="form-group">
+							 <label for="userName" class="control-label">Username</label>
+							 <input id="userName" name="userName" type="text" class="form-control" placeholder="Enter Username"    ng-model="formData.userName" required="required"/>
+						</div>	 
+					</div>
+				</div>	
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+						<div class="form-group">
+							 <label for="firstName" class="control-label">FirstName</label>
+							 <input id="firstName" name="firstName" type="text" class="form-control" placeholder="Enter FirstName"    ng-model="formData.firstName" required="required"/>
+						</div>	 
+					</div>	
+					<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+						<div class="form-group">
+							 <label for="lastName" class="control-label">LastName</label>
+							 <input id="lastName" name="lastName" type="text" class="form-control" placeholder="Enter LastName"    ng-model="formData.lastName" required="required"/>
+						</div>	 
+					</div>
+				</div>	
+				
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+						<div class="form-group">
+							 <label for="password" class="control-label">Password</label>
+							 <input id="password" name="password" type="password" class="form-control" placeholder="Enter Password"    ng-model="formData.password" required="required"/>
+						</div>	 
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+						<div class="form-group">
+							 <label for="confPassword" class="control-label">Confirm Password</label>
+							 <input id="confPassword" name="confPassword" type="password" class="form-control" placeholder="Confirm Password"    ng-model="formData.repass" required="required"/>
+						</div>	 
+					</div>	
+				</div>
+				
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+						<div class="form-group">
+							 <label for="Email" class="control-label">E-Mail</label>
+							 <input id="Email" name="Email" type="text" class="form-control" placeholder="Enter E-Mail"    ng-model="formData.email" required="required"/>
+						</div>	 
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+						<div class="form-group">
+							 <label for="mobile" class="control-label">Mobile Number</label>
+							 <input id="mobile" name="mobile" type="text" class="form-control" placeholder="Enter Mobile Number"    ng-model="formData.mobile" required="required"/>
+						</div>	 
+					</div>	
+				</div>
+				
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+						<div class="form-group">
+							 <button type="submit" ng-disabled=!formData.$valid class="btn btn-primary"  ng-click="signUp()">Submit</button>
+	        				 <button type="reset" class="btn btn-primary" ng-click="resetSignUp()">Reset</button>
+						</div>	 
+					</div>
+						
+				</div>	
+			</form>	
+		</div>
+	</div>
+	</div>
+	</div>
+</div>

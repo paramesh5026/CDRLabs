@@ -1,0 +1,27 @@
+			/*$scope.$watch("signupformdata.username", function(newVal, oldVal) {
+	    		
+	    		if(!$scope.signupform.username.$valid){
+	         		$scope.signup_error = 'Username is not provided.';
+	    		}else
+	    		{
+	         		$scope.signup_error = false;
+	    		}
+	    	});*/
+	    	
+	    	
+	    	
+	    	//Availability of user for creation
+	    	 /*$scope.usernameChanged = function () {
+	    		 
+	    		 if($scope.signupform.username.$valid){
+	    			 $scope.signup_error = false;
+		         }
+	    		 $log.log("username valid data:"+$scope.signupformdata.username.$valid);
+	    		 $log.log("username invalid data:"+$scope.signupformdata.username.$invalid);
+	    		 $log.log("username pristine data:"+$scope.signupformdata.username.$pristine);
+	    		 //var username = $scope.signupformdata.username;
+	    		 
+	    		 //validate wheter the username is already is available or not
+	    		 //$log.log("userAvalableToUse data:"+$scope.userAvalableToUse);
+	    		// $log.log("username data:"+username);
+	    	 };*/

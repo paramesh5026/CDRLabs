@@ -1,0 +1,96 @@
+ <div class="container">
+	
+	<div class="row centered-form">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+	
+		<div class="panel panel-default "> 
+	
+			<div class="panel-heading" data-toggle="collapse" aria-expanded="false" 
+			data-target="#studyform" aria-controls="studyform">
+			New Study Registration
+				<!-- <button  type="button" data-toggle="collapse" aria-expanded="false" data-target="#studyform" 
+				aria-controls="studyform"> New Study Registration</button> -->
+			</div>
+		
+			<div class="panel-body margin-top" id="studyform">
+			
+				<form class="form" role="form" name="studyForm">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								 <label for="studyNameLabel" class="control-label">*StudyName</label>
+								 <input id="studyName" name="studyName" type="text" class="form-control" 
+								 placeholder="Enter Study Name"    ng-model="studyform.studyName" required="required" 
+								 ng-minlength="6" ng-maxlength="15"/>
+								 <div ng-messages="studyForm.studyName.$dirty && studyForm.studyName.$error" style="color:red">
+	        						<div ng-message='required'> user name is required. </div>
+	        						<div ng-message='minlength'> Please enter study name atleast 6 characters.</div>
+	        						<div ng-message='maxlength'> study name can't be 8 char length. </div>
+	       						 </div>
+							</div>	 
+						</div>
+						
+					</div>	
+					
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								 <label for="studyDescLabel" class="control-label">*Study Descritpion</label>
+								 <textarea id="studyDesc" name="studyDesc" class="form-control" 
+								 placeholder="Enter Study Description"    ng-model="studyform.studyDesc" required="required" 
+								 ng-minlength="20" ng-maxlength="500"/>
+								 <div ng-messages="studyForm.studyDesc.$dirty && studyForm.studyDesc.$error" style="color:red">
+	        						<div ng-message='required'> user name is required. </div>
+	        						<div ng-message='minlength'> Please enter study description atleast 20 characters.</div>
+	        						<div ng-message='maxlength'> study description can't be 500 char length. </div>
+	       						 </div>
+							</div>	 
+						</div>
+						
+					</div>
+					
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								 <label for="studyLocationLabel" class="control-label">*Study Location</label>
+								 <select id="studyLocation" name="studyLocation" class="form-control" 
+								 ng-options="location for location in locations" 
+								 placeholder="Select Study Location"   ng-model="studyform.selectedLocation" required="required"/>
+								 <div ng-messages="studyForm.studyLocation.$dirty && studyForm.studyLocation.$error" style="color:red">
+	        						<div ng-message='required'> Location is required. Select atleast one value from the list.</div>
+	       						 </div>
+							</div>	 
+						</div>
+						
+					</div>
+					
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								 <label for="parCountLabel" class="control-label">Number of Participants</label>
+								 <input id="studyParticipants" name="studyform.participants" type="number" class="form-control" 
+								 placeholder="Enter Number of Participants" ng-model="studyform.studyParticipants" required="required" 
+								 min="1" max="5" />
+								 <div ng-messages="studyForm.studyParticipants.$dirty && studyForm.studyParticipants.$error" style="color:red">
+	        						<div ng-message='required'> Number of Participants is required. </div>
+	        					</div>
+							</div>	 
+						</div>
+						
+					</div>	
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+							<div class="form-group">
+								 <button type="submit" ng-disabled=!studyForm.$valid class="btn btn-primary"  ng-click="submitNewStudy()">Submit</button>
+		        				 <button type="reset" class="btn btn-primary"  ng-click="restNewStudyForm()">Reset</button>
+		        				 <button type="cancel" class="btn btn-primary"  ng-click="cancelNewStudyForm()">Cancel</button>
+							</div>	 
+						</div>
+							
+					</div>	
+				</form>	
+		</div>
+	</div>
+	</div>
+	</div>
+</div>

@@ -1,0 +1,80 @@
+<div class="container">
+	
+	<form class="well form-horizontal" id="locationform" role="form" name="locationform">
+		<fieldset>
+			<!-- Form Name -->
+			<legend>Create Location</legend>
+				<div class="form-group">
+					<div ng-show="location_error" class="alert alert-danger">{{location_error}}</div>
+				</div>
+				
+				<!-- Location Short Name -->
+				<div class="form-group" ng-class="{'has-error': locationform.location_short_name.$touched && locationform.location_short_name.$invalid }">
+				  <label class="col-md-4 control-label">Location Short Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="location_short_name" placeholder="Location Short Name" class="form-control"  
+				  		ng-model="locationFormData.locationshortname" type="text"
+				  		ng-minlength="3" 
+           				ng-maxlength="7" 
+           				required />
+				    </div>
+				    <div ng-messages="locationform.location_short_name.$dirty &&  locationform.location_short_name.$error" style="color:red">
+							    <div ng-message='required'>Location shortname is a required field.</div>
+							    <div ng-message='minlength'>Location shortname should be min 3 characters.</div>
+							    <div ng-message='maxlength'>Location shortname should be max 7 characters.</div>
+	  				</div>	
+				  </div>
+				</div>
+				
+				<!-- Location Name -->
+				<div class="form-group" ng-class="{'has-error': locationform.location_name.$touched && locationform.location_name.$invalid }">
+				  <label class="col-md-4 control-label">Location Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="location_name" placeholder="Location Name" class="form-control"  
+				  		ng-model="locationFormData.locationname" type="text"
+				  		ng-minlength="5" 
+           				required />
+				    </div>
+				    <div ng-messages="locationform.location_name.$dirty &&  locationform.location_name.$error" style="color:red">
+							    <div ng-message='required'>Location name is a required field.</div>
+							    <div ng-message='minlength'>Location name should be min 5 characters.</div>
+	  				</div>
+				  </div>
+				</div>
+				
+				<!-- Location Description -->
+				<div class="form-group" ng-class="{'has-error': locationform.location_desc.$touched && locationform.location_desc.$invalid }">
+				  <label class="col-md-4 control-label">Location Description</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<textarea  name="location_desc" placeholder="Location Description" class="form-control" 
+				  		ng-model="locationFormData.locationdesc" type="text"
+				  		ng-minlength="30" 
+           				required />
+				    </div>
+				    <div ng-messages="locationform.location_desc.$dirty &&  locationform.location_desc.$error" style="color:red">
+							    <div ng-message='required'>Location description is a required field.</div>
+							    <div ng-message='minlength'>Location description should be min 30 characters.</div>
+	  				</div>
+				  </div>
+				</div>
+		
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label"></label>
+				  <div class="col-md-4">
+				    <button type="submit" class="btn btn-primary" ng-click="createLocation()">Submit <span class="glyphicon glyphicon-send"></span></button>
+				    <button type="reset" class="btn btn-primary" ng-click="resetLocationDetails()">Reset <span class="glyphicon glyphicon-refresh"></span></button>
+				    <button type="cancel" class="btn btn-primary" ng-click="cancelLocationForm()">Cancel <span class="glyphicon glyphicon-backward"></span></button>
+				  </div>
+				</div>
+		</fieldset>
+	</form>
+
+</div>
+

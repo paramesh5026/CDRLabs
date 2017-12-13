@@ -1,0 +1,56 @@
+<div ng-app="HomeControl" background="assets/img/logos/downtown_logo.jpg">
+<div style="padding-left:10%; padding-right:10%">
+	
+	<div class="panel panel-info" style="margin-bottom:10px;margin-top:20px">
+		    <div class="panel-heading">
+		        <h3 class="panel-title">Activities: Recent </h3>
+		    </div>
+	    	<div class="panel-body">
+		    	<div  class="list-group" ng-repeat="recActivity in recentActivities">
+			            	<div class="list-group-item">
+				            	<div>
+				            		<span style="font-weight:bold">{{recActivity.activityname}}</span>
+				            		<span style="position: absolute; right: 0;">{{recActivity.duration}}</span> 
+				            	</div>
+			            		<span>{{recActivity.activitydesc}}</span>
+			            	</div>
+			     	</div>
+	    	</div>
+	</div>
+	
+	
+	<div class="panel panel-info" style="margin-bottom:10px">
+		    <div class="panel-heading">
+		        <h3 class="panel-title">Activities: This Month </h3>
+		    </div>
+	    	<div class="panel-body">
+	    		<div  class="list-group" ng-repeat="activity in monthActivities">
+		            	<div class="list-group-item">
+		            	<div>
+		            	<span style="font-weight:bold">{{activity.activityname}}</span>
+		            	<span style="position: absolute; right: 0;">{{activity.duration}}</span> </div>
+		            	<span >{{activity.activitydesc}}</span>
+		            	</div>
+		     	</div>
+	    	
+	    	</div>
+	</div>
+	
+	<div class="panel panel-info" style="margin-bottom:10px">
+		    <div class="panel-heading">
+		        <h3 class="panel-title">Previous Activities</h3>
+		    </div>
+	    	<div class="panel-body">
+	    		<div  class="list-group" ng-repeat="oldActivity in oldActivities">
+		            	<div class="list-group-item">
+		            	<div>
+		            	<span style="font-weight:bold">{{oldActivity.activityname}}</span>
+		            	<span style="position: absolute; right: 0;">{{oldActivity.duration}}</span> </div>
+		            	<span>{{oldActivity.activitydesc}}</span>
+		            	</div>
+		     	</div>
+	    	</div>
+	</div>
+	
+</div>
+</div>

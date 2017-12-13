@@ -1,0 +1,41 @@
+<div ng-app="ActivityModule">
+
+	 		<br>
+			 <a href="#/newactivity" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Add Activity</a>
+			 <br>
+			<table class="responstable">
+	        	<tbody>
+		        	<tr >
+		        		<th>Sno </th>
+		            	<th ng-click='activitySortColumn("activityname")' ng-class='activitySortClass("activityname")'>Activity Name </th>
+		            	<th ng-click='activitySortColumn("firstname")' ng-class='activitySortClass("firstname")'>Activity Description </th>
+		            	<th ng-click='activitySortColumn("lastname")' ng-class='activitySortClass("lastname")'>Activity Date </th>
+		            	<th style= "text-align:center">Update </th>
+		            	<th style= "text-align:center">Delete </th>
+		        	</tr>
+				
+		        	<tr ng-repeat="activity in activities | orderBy: activitySortCol : activityReverse | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+		            	<td style= "text-align:center">{{$index+1}}</td>
+		            	<td>{{activity.activityname}}</td>
+		            	<td>{{activity.activitydesc}}</td>
+		            	<td>{{activity.activitydate}}</td>
+		            	<td style= "text-align:center"><a href="#/updateactivity/{{activity.activityname}}" class="btn btn-link btn-xs">Update <span class="glyphicon glyphicon-user"/></a></td>
+		            	<td style= "text-align:center"><a class="btn btn-link btn-xs" ng-click='deleteActivity(activity.activityname)'>Delete <span class="glyphicon glyphicon-user"/></a></td>
+		        	</tr>
+		        </tbody>
+	        </table>
+	        
+<!-- 	        <ul uib-pagination page="currentPage" class="pagination-sm" boundary-link-numbers="true" 
+	        max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit"></ul> -->
+	        
+	        <div> View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+	        	<option>3</option>
+	        	<option>5</option>
+	        	<option>10</option><option>20</option><option>30</option><option>40</option>
+	        	<option>50</option><option>All</option></select> records at a time.</div>
+	        <ul uib-pagination ng-model="currentPage" class="pagination-sm" boundary-link-numbers="false" 
+	        max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit" 
+	        rotate="true" boundary-links="true" force-ellipses="false"></ul>
+	        
+
+</div>

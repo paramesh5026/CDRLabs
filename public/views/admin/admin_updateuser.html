@@ -1,0 +1,88 @@
+<div class="container">
+	
+	<form class="well form-horizontal" id="update_contact_form" role="form" name="update_contact_form">
+		<fieldset>
+			<!-- Form Name -->
+			<legend>Update User</legend>
+				
+				<!-- Username -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">User Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="user_name" placeholder="User Name" class="form-control"  ng-model="updateUserFormData.username" type="text" readonly/>
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- First Name -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">First Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="first_name" placeholder="First Name" class="form-control" ng-model="updateUserFormData.firstname" type="text"/>
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- Last Name -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Last Name</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<input  name="first_name" placeholder="Last Name" class="form-control"  ng-model="updateUserFormData.lastname" type="text"/>
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- Select User Role -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">User Role</label>  
+				  <div class="col-md-4 inputGroupContainer">
+				  	<div class="input-group">
+				  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  		<select  name="user_role" placeholder="Select User Role" class="form-control"  ng-options="userrole for userrole in userroles" ng-model="updateUserFormData.role" />
+				    </div>
+				  </div>
+				</div>
+				
+				
+				<!-- EMail-->
+			       <div class="form-group">
+					  <label class="col-md-4 control-label">E-Mail</label>  
+					    <div class="col-md-4 inputGroupContainer">
+					    <div class="input-group">
+					        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					  		<input name="email" placeholder="E-Mail Address" class="form-control"  ng-model="updateUserFormData.email" type="text">
+					    </div>
+					  </div>
+				</div>
+			
+			
+			<!-- Phone input-->
+			       
+			<div class="form-group">
+				  <label class="col-md-4 control-label">Phone #</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+				  		<input name="phone" placeholder="(845)555-1212" class="form-control" ng-model="updateUserFormData.mobile" type="text">
+				    </div>
+				  </div>
+			</div>
+
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label"></label>
+				  <div class="col-md-4">
+				    <button type="submit" class="btn btn-primary" ng-click="updateUser()">Update <span class="glyphicon glyphicon-send"></span></button>
+				    <button type="cancel" class="btn btn-primary" ng-click="cancelUpdateUserForm()">Cancel <span class="glyphicon glyphicon-backward"></span></button>
+				  </div>
+				</div>
+		</fieldset>
+	</form>
+
+</div>
